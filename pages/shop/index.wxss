@@ -1,0 +1,67 @@
+/* pages/shop/index.wxss */
+.page { padding: 30rpx; }
+.hero { padding: 40rpx 34rpx; }
+.price-row {
+  display: flex;
+  align-items: center;
+  background: #101016;
+  border-radius: 22rpx;
+  padding: 20rpx 24rpx;
+  margin-top: 22rpx;
+}
+.cur {
+  font-size: 36rpx;
+  color: #e8b84b;
+  margin-right: 12rpx;
+}
+.price-input {
+  flex: 1;
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #f0ede5;
+}
+.ph { color: #5a5a66; }
+
+.calc-box {
+  margin-top: 22rpx;
+  background: rgba(232, 184, 75, 0.08);
+  border-radius: 20rpx;
+  padding: 24rpx;
+}
+.calc-box.empty { background: #101016; }
+.calc-v {
+  font-size: 42rpx;
+  font-weight: 800;
+  color: #e8b84b;
+  display: block;
+}
+.calc-t {
+  font-size: 26rpx;
+  color: #cfcbbe;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.name-row {
+  margin-top: 22rpx;
+  background: #101016;
+  border-radius: 18rpx;
+  padding: 18rpx 24rpx;
+}
+.name-input {
+  font-size: 28rpx;
+  color: #f0ede5;
+}
+
+.sync-row {
+  margin-top: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tips { margin-top: 30rpx; }
+.tip-line {
+  font-size: 24rpx;
+  color: #8a88a0;
+}

@@ -1,0 +1,55 @@
+/* pages/stats/index.wxss */
+.page { padding: 30rpx; }
+.seg {
+  display: flex;
+  background: #16161d;
+  border-radius: 999rpx;
+  padding: 8rpx;
+  margin-bottom: 28rpx;
+}
+.seg-item {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #8a88a0;
+  border-radius: 999rpx;
+}
+.seg-item.active {
+  background: linear-gradient(135deg, #e8b84b, #d99a2b);
+  color: #1a1405;
+  font-weight: 600;
+}
+.summary { padding: 30rpx; }
+.sum-row {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 20rpx;
+}
+.sum-item {
+  flex: 1;
+  background: #101016;
+  border-radius: 20rpx;
+  padding: 22rpx;
+}
+.sum-val {
+  font-size: 40rpx;
+  font-weight: 800;
+  color: #e8b84b;
+  display: block;
+}
+.sum-l {
+  font-size: 22rpx;
+  color: #8a88a0;
+  margin-top: 6rpx;
+  display: block;
+}
+.empty {
+  margin-top: 30rpx;
+  text-align: center;
+  padding: 60rpx 0;
+}
+.empty-t {
+  font-size: 26rpx;
+  color: #5a5a66;
+}

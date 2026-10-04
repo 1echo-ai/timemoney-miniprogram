@@ -1,0 +1,37 @@
+<view class="page">
+  <!-- 顶部 Tab -->
+  <view class="seg">
+    <view class="seg-item {{tab === 'income' ? 'active' : ''}}" data-tab="income" bindtap="switchTab">收入台账</view>
+    <view class="seg-item {{tab === 'consume' ? 'active' : ''}}" data-tab="consume" bindtap="switchTab">消费工时台账</view>
+  </view>
+
+  <!-- 收入台账 -->
+  <block wx:if="{{tab === 'income'}}">
+    <view class="gold-card summary">
+      <text class="section-title">今日成长</text>
+      <view class="sum-row">
+        <view class="sum-item">
+          <text class="sum-val">¥{{todayTotal}}</text>
+          <text class="sum-l">今日合计</text>
+        </view>
+        <view class="sum-item">
+          <text class="sum-val">¥{{todayBase}}</text>
+          <text class="sum-l">基础工时</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{empty}}" class="empty">
+      <text class="empty-t">今天还没开始赚</text>
+    </view>
+  </block>
+
+  <!-- 消费工时台账 -->
+  <block wx:if="{{tab === 'consume'}}">
+    <view class="gold-card summary">
+      <text class="section-title">消费工时换算</text>
+      <view class="empty">
+        <text class="empty-t">还没有记录商品，去「买它」页算一下</text>
+      </view>
+    </view>
+  </block>
+</view>

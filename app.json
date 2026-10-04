@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/shop/index",
+    "pages/stats/index",
+    "pages/fish/index"
+  ],
+  "window": {
+    "backgroundColor": "#0B0B0F",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0B0B0F",
+    "navigationBarTitleText": "打工时间计价器",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#5A5A66",
+    "selectedColor": "#E8B84B",
+    "backgroundColor": "#131317",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "搞钱"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "text": "买它"
+      },
+      {
+        "pagePath": "pages/stats/index",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/fish/index",
+        "text": "摸鱼"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

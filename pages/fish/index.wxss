@@ -1,0 +1,121 @@
+.page {
+  min-height: 100vh;
+  padding: 32rpx 28rpx 60rpx;
+  box-sizing: border-box;
+  background: #0b0b0f;
+}
+
+/* 钱袋卡片 */
+.gold-card {
+  background: linear-gradient(180deg, #1a1710 0%, #120f0a 100%);
+  border: 1rpx solid rgba(232, 184, 75, 0.35);
+  border-radius: 28rpx;
+  padding: 32rpx;
+}
+.section-title {
+  color: #e8b84b;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  opacity: 0.9;
+}
+.bag { text-align: center; }
+.bag-amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 12rpx;
+}
+.bag-symbol { color: #e8b84b; font-size: 36rpx; margin-right: 8rpx; }
+.bag-num {
+  color: #f5e6c8;
+  font-size: 88rpx;
+  font-weight: 700;
+}
+.bag-sub { color: rgba(245, 230, 200, 0.5); font-size: 24rpx; display: block; margin-top: 8rpx; }
+
+/* 木鱼区 */
+.fish-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 48rpx 0 32rpx;
+}
+.fish-hit {
+  position: relative;
+  width: 420rpx;
+  height: 420rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.fish-body {
+  position: relative;
+  width: 320rpx;
+  height: 200rpx;
+  background: radial-gradient(circle at 35% 30%, #8a5a24 0%, #5f3c16 55%, #3c2410 100%);
+  border-radius: 55% 55% 50% 50%;
+  box-shadow:
+    0 20rpx 30rpx rgba(0, 0, 0, 0.5),
+    inset 0 -12rpx 20rpx rgba(0, 0, 0, 0.4),
+    inset 0 12rpx 18rpx rgba(255, 200, 120, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fish-body::before {
+  content: '';
+  position: absolute;
+  top: -10rpx;
+  width: 200rpx;
+  height: 36rpx;
+  background: radial-gradient(ellipse, #b07a34 0%, #7a4f20 70%);
+  border-radius: 50%;
+  box-shadow: 0 6rpx 8rpx rgba(0, 0, 0, 0.4);
+}
+.fish-cat {
+  color: rgba(245, 230, 200, 0.75);
+  font-size: 26rpx;
+  letter-spacing: 6rpx;
+  margin-top: 40rpx;
+}
+.fish-glow {
+  position: absolute;
+  bottom: 0;
+  width: 220rpx;
+  height: 60rpx;
+  background: radial-gradient(ellipse, rgba(232, 184, 75, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.fish-hint {
+  color: rgba(245, 230, 200, 0.45);
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+.fish-amount {
+  color: #ffd76a;
+  font-size: 44rpx;
+  font-weight: 700;
+  margin-top: 12rpx;
+  min-height: 60rpx;
+}
+
+/* 信息条 */
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rpx;
+}
+.info-item { text-align: center; flex: 1; }
+.info-l { color: rgba(245, 230, 200, 0.5); font-size: 24rpx; display: block; }
+.info-v { color: #f5e6c8; font-size: 32rpx; font-weight: 600; display: block; margin-top: 8rpx; }
+
+/* 清空 */
+.clear-btn {
+  margin-top: 40rpx;
+  background: transparent;
+  border: 1rpx solid rgba(232, 184, 75, 0.4);
+  color: rgba(245, 230, 200, 0.6);
+  border-radius: 999rpx;
+  font-size: 28rpx;
+}

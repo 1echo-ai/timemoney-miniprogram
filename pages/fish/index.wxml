@@ -1,0 +1,42 @@
+<view class="page">
+  <!-- 钱袋 -->
+  <view class="gold-card bag">
+    <text class="section-title">今日摸鱼金库</text>
+    <view class="bag-amount">
+      <text class="bag-symbol">¥</text>
+      <text class="bag-num">{{total}}</text>
+    </view>
+    <text class="bag-sub">你摸了 {{taps}} 次鱼 · {{modeLabel}}</text>
+  </view>
+
+  <!-- 木鱼 -->
+  <view class="fish-wrap">
+    <view class="fish-hit" bindtap="onTap">
+      <view class="fish-body">
+        <view class="fish-cat">金丝楠木</view>
+        <view class="fish-face"></view>
+      </view>
+      <view class="fish-glow"></view>
+    </view>
+    <text class="fish-hint">轻触木鱼 · 每下都是钱</text>
+    <text class="fish-amount">{{lastAmount}}</text>
+  </view>
+
+  <!-- 统计条 -->
+  <view class="gold-card info">
+    <view class="info-item">
+      <text class="info-l">每秒时薪</text>
+      <text class="info-v">¥{{perSec}}</text>
+    </view>
+    <view class="info-item">
+      <text class="info-l">摸鱼模式</text>
+      <text class="info-v" style="color:{{modeColor}}">{{modeName}}</text>
+    </view>
+    <view class="info-item">
+      <text class="info-l">累计敲击</text>
+      <text class="info-v">{{taps}}</text>
+    </view>
+  </view>
+
+  <button class="clear-btn" bindtap="clearToday">清空今日记录</button>
+</view>

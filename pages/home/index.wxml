@@ -1,0 +1,121 @@
+<view class="page">
+  <!-- 顶部导航：标题 + 设置 -->
+  <view class="header">
+    <view>
+      <text class="brand">TIMEMONEY</text>
+      <text class="sub">打工时间计价器</text>
+    </view>
+    <view class="gear" bindtap="openSettings">
+      <text class="gear-icon">⚙</text>
+    </view>
+  </view>
+
+  <!-- Hero 卡片 -->
+  <view class="gold-card hero">
+    <text class="hero-label">今日已入账</text>
+    <view class="hero-amount">
+      <text class="symbol">¥</text>
+      <text class="num">{{todayEarned}}</text>
+    </view>
+
+    <!-- 等效时薪 + 加班警示 -->
+    <view class="eff-line">
+      <text class="eff-text">等效时薪 ¥{{effective}}/h</text>
+      <text wx:if="{{overtimeText}}" class="eff-warn">{{overtimeText}}</text>
+      <text wx:else class="eff-delta {{effDelta < 0 ? 'warn' : 'ok'}}">{{effDelta >= 0 ? '+' : ''}}{{effDelta}}%</text>
+    </view>
+
+    <!-- 状态条 -->
+    <view class="status-row">
+      <view class="status-pill {{status}}">
+        <view class="dot"></view>
+        <text>{{status === 'overtime_unpaid' ? '加班被白嫖中' : status === 'overtime_paid' ? '加班赚钱中' : status === 'idle' ? '待上班' : '搞钱中'}}</text>
+      </view>
+      <text class="per-sec">{{perSec}} 元/秒</text>
+    </view>
+
+    <!-- 底部双栏 -->
+    <view class="hero-bottom">
+      <view class="hb-col">
+        <text class="hb-v">{{workingHours}}</text>
+        <text class="hb-l">已工作</text>
+      </view>
+      <view class="hb-col">
+        <text class="hb-v">{{remainingMinutes}}</text>
+        <text class="hb-l">距标准时长</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日搞钱洞察 -->
+  <view class="gold-card insight">
+    <text class="section-title">今日搞钱洞察</text>
+    <view class="insight-cards">
+      <view class="ins-item">
+        <text class="ins-label">基础工时</text>
+        <text class="ins-val">¥{{baseToday}}</text>
+      </view>
+      <view class="ins-item">
+        <text class="ins-label">加班 {{overtimeRateTxt}}</text>
+        <text class="ins-val">¥{{overtimeToday}}</text>
+      </view>
+    </view>
+    <view wx:if="{{lostPay > 0}}" class="lost-row">
+      <text class="lost-text">加班被白嫖 ¥{{lostPay}} / 应得 ¥{{expectedOvertime}}</text>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="footer-tip">
+    <text>下划到「买它 / 统计 / 摸鱼」查看其他模块</text>
+  </view>
+
+  <!-- 配置弹窗 -->
+  <view wx:if="{{showSettings}}" class="mask" bindtap="closeSettings">
+    <view class="modal" catchtap="noop">
+      <view class="modal-head">
+        <text class="modal-title">薪资 & 工作时间</text>
+        <text class="modal-close" bindtap="closeSettings">✕</text>
+      </view>
+      <scroll-view scroll-y class="modal-body">
+        <!-- 薪资 -->
+        <text class="section-title">薪资参数</text>
+        <view class="field">
+          <text class="field-label">基础时薪（元/小时）</text>
+          <input class="input" type="number" value="{{sHourly}}" bindinput="onHourly" />
+        </view>
+        <view class="field">
+          <text class="field-label">时薪为税后</text>
+          <switch checked="{{sIsAfterTax}}" bindchange="onToggleTax" color="#E8B84B" />
+        </view>
+        <view wx:if="{{sIsAfterTax}}" class="field">
+          <text class="field-label">税率 %</text>
+          <input class="input" type="number" value="{{sTaxRate}}" bindinput="onTaxRate" />
+        </view>
+        <!-- 工作时间 -->
+        <text class="section-title sec-gap">工作时间</text>
+        <view class="field">
+          <text class="field-label">上班时间</text>
+          <picker mode="time" value="{{sStart}}" bindchange="onStart"><view class="picker">{{sStart}}</view></picker>
+        </view>
+        <view class="field">
+          <text class="field-label">下班时间</text>
+          <picker mode="time" value="{{sEnd}}" bindchange="onEnd"><view class="picker">{{sEnd}}</view></picker>
+        </view>
+        <view class="field">
+          <text class="field-label">午休（分钟）</text>
+          <input class="input" type="number" value="{{sLunch}}" bindinput="onLunch" />
+        </view>
+        <view class="field">
+          <text class="field-label">加班倍率</text>
+          <input class="input" type="number" value="{{sOvertimeRate}}" bindinput="onOvertimeRate" />
+        </view>
+        <view class="field">
+          <text class="field-label">加班没有加班费</text>
+          <switch checked="{{sNoOvertime}}" bindchange="onToggleOvertime" color="#E8B84B" />
+        </view>
+      </scroll-view>
+      <button class="btn-gold save-btn" bindtap="saveSettings">保存</button>
+    </view>
+  </view>
+</view>
